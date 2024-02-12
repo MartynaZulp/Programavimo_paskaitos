@@ -22,17 +22,15 @@ def daugyba (pirmas, antras):
 def dalyba(pirmas, antras):
     return pirmas/antras
 
-# Klausia ar vartotojas nori skaiciuoti
-select = (input("Ar norite skaiciuoti (taip/ne):"))
-if select == "ne":
-    print("Programa baigta")
-else:
+select = ("taip")
+while select == "taip":
+    # Klausia ar vartotojas nori skaiciuoti
+    select = (input("Ar norite skaiciuoti (taip/ne):"))
     print("Pasirinkite skaiciuotuvo operacija -\n" \
             "1. Sudetis\n" \
             "2. Atimtis\n" \
             "3. Daugyba\n" \
             "4. Dalyba\n")
-
 
     # Vartotojas iveda duomenis
     select = int(input("Pasirinkite operacijas: 1, 2, 3, 4 :"))
