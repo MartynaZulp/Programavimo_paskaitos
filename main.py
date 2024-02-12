@@ -47,7 +47,10 @@ elif select == 3:
                     daugyba(pirmas, antras))
  
 elif select == 4:
-    print(pirmas, "/", antras, "=",
+    if antras == 0:
+        print("Dalyba iš 0 negalima")
+    else:
+        print(pirmas, "/", antras, "=",
                     dalyba(pirmas, antras))
 else:
     print("Neteisinga ivestis")
