@@ -33,7 +33,7 @@ def hello_world():
                         <input type="text" id="test3" name="test3" value="0"><br><br>
                         </br></br>
 
-                    <input type="submit" value="Submit">
+                    <input type="Ivesti" value="Ivesti">
                 </form> 
             """
 
@@ -42,21 +42,21 @@ def skaiciavimo():
     if not request.args.get('test') or not request.args.get('test2'):
          return 'nera argumentu'
     #UZKLAUSA. ARGUMENTAI. METODAS()
-    skaicius = request.args.get("test") ### Pasiimam argumenta is URL pvz.: /skaicius?test=100
+    skaicius1 = request.args.get("test") ### Pasiimam argumenta is URL pvz.: /skaicius?test=100
     skaicius2 = request.args.get("test2") ### Pasiimam argumenta 2 is URL pvz.: /skaicius?test2=100
     zenklas = request.args.get("test3")
 
     if zenklas == '+':
-       ats = sudetis(int(skaicius),int(skaicius2))
+       ats = sudetis(int(skaicius1),int(skaicius2))
     
     elif zenklas == '-':
-        ats = atimtis(int(skaicius),int(skaicius2))
+        ats = atimtis(int(skaicius1),int(skaicius2))
 
     elif zenklas == '*':
-        ats = daugyba(int(skaicius),int(skaicius2))
+        ats = daugyba(int(skaicius1),int(skaicius2))
     
     elif zenklas == '/':
-        ats = dalyba(int(skaicius),int(skaicius2))
+        ats = dalyba(int(skaicius1),int(skaicius2))
     return f"Gautas atsakymas: {ats}"
 
 if __name__ == "__main__":
