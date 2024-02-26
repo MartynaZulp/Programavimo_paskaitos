@@ -1,15 +1,25 @@
+from flask import Flask
 
+app = Flask(__name__)
 
-kintamasis = 1
-kintamasis2 = 2
+@app.route("/")
+def hello_world():
+    return "<p>Hello, World!</p>"
 
-def funkcija():
-    print(kintamasis)
-    print(kintamasis2)
-    print(f'test:{kintamasis2}{kintamasis}')
-    print('test:{}{}'.format({kintamasis2,kintamasis}))
+@app.route("/skaicius")
+def skaiciavimo():
+    return "<p>Hello, World!</p>"
 
-# Funkcija sudeda du skaicius
+if __name__ == " __main__":
+    app.run(debug=True)
+
+'''
+
+    pip install Flask
+    pip3 install Flask
+
+'''
+'''# Funkcija sudeda du skaicius
 def sudetis(pirmas, antras):
     return pirmas+antras
 # Funkcija is pirmo atima antraji skaiciu
@@ -24,8 +34,9 @@ def dalyba(pirmas, antras):
 
 select = ("taip")
 while select == "taip":
-    # Klausia ar vartotojas nori skaiciuoti
-    select = (input("Ar norite skaiciuoti (taip/ne):"))
+    # Klausia ar vartotojas nori skaiciuoti toliau
+    select = (input("Ar norite skaiciuoti toliau(taip/ne):"))
+    
     print("Pasirinkite skaiciuotuvo operacija -\n" \
             "1. Sudetis\n" \
             "2. Atimtis\n" \
@@ -57,5 +68,5 @@ while select == "taip":
             print(pirmas, "/", antras, "=",
                         dalyba(pirmas, antras))
     else:
-        print("Neteisinga ivestis")
+        print("Neteisinga ivestis")'''
 
