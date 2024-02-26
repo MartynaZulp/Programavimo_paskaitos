@@ -1,5 +1,7 @@
-from flask import Flask, request
+from flask import Flask, request, render_template 
+
 import string
+
 app = Flask(__name__)
 
 
@@ -13,27 +15,34 @@ def daugyba(pirmas,antras):
         return pirmas*antras
 
 def dalyba(pirmas,antras):
-        return pirmas/antras
+         if antras != 0:
+              return pirmas/antras
+         else:
+            return "Dalyba iš nulio negalima"
+
+@app.route("/")
+def hello_world():
+    return render_template('index.html', title='Skaičiuotuvas', username='Vartotojas', user_is_logged_in=True, shopping_list=['preke1', 'preke2', 'preke3'])
 
 
-@app.route("/") # Route 1
+@app.route("/skaicius") # Route 1
 def hello_world():
 
     return f"""
-                <form action="/skaicius">
+                <form action="/Skaicius">
                     <label for="test">skaicius 1</label><br>
                         <input type="text" id="test" name="test" value="0"><br>
                         </br></br>
 
-                    <label for="test2">skaicius 2</label><br>
+                    <label for="test2">Skaicius 2</label><br>
                         <input type="text" id="test2" name="test2" value="0"><br><br>
                         </br></br>
                         
-                    <label for="test3">zenklas</label><br>   
+                    <label for="test3">Zenklas</label><br>   
                         <input type="text" id="test3" name="test3" value="0"><br><br>
                         </br></br>
 
-                    <input type="Ivesti" value="Ivesti">
+                    <input type="Submit" value="Submit">
                 </form> 
             """
 
